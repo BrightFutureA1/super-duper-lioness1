@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        .card {
+            height: 350px;
+            width: 300px;
+            border: 2px solid black;
+        }
+
+        body {
+            background: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-div">
+        <h1>GOLD Mind!</h1>
+        <h4>You're not Alone!</h4>
+        <h4>Speak to a therapist</h4>
+        <div class="row"></div>
+        <div class='col s12 m7'>
+            <div class="card">
+                <div class="card content">
+                    <div class="card-image">
+                        <% doctor.forEach((data, index) => { %>
+                        <h2><%=data.specialty%></h2>
+                        <h2><%=data.contact%></h2>
+                        <img src="<%=data.img %>" alt="<%=data.name %>">
+                        <br>
+                        <a href="/doctors/<%= index %>">More Info</a>
+                        <nav>
+                            <a href="/products/new">Create a New Product</a>
+                        </nav>
+
+
+
+
+                        <a href="/doctors/new">Add New Doctor</a>
+                        </nav>
+                    </div>
+
+
+                    <% doctor.forEach((data, index) => { %>
+                    <h2><%=data.name%></h2>
+                    <%})%>
+                </div>
+</body>
+
+</html>
