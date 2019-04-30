@@ -3,52 +3,166 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="SHORTCUT ICON" href="images/logo1.png" type="image/x-icon">
     <title></title>
     <style>
         .card {
-            height: 350px;
-            width: 300px;
+            height: 375px;
+            width: 250px;
             border: 2px solid black;
         }
 
         body {
-            background: gold;
+            background: whitesmoke;
         }
+
+        img {
+            height: 190px;
+            width: 245px;
+            border: 2px solid black;
+
+        }
+
+        nav {
+            text-align: left;
+
+        }
+
+        /* .container {
+            background: palevioletred;
+            height: 125px;
+            font-family: Arial, Helvetica, sans-serif
+        } */
+
+        header {
+            background: palevioletred;
+            border: 5px solid brown;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container li {
+            float: right;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /*  {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        } */
+/* 
+        .container li a:hover:not(.active) {
+            background-color: #111;
+        } */
+/* 
+        li nav {
+            float: left;
+        } */
     </style>
 </head>
+<header>
+    <h1>M ! N D O L O G Y</h1>
+    <h2>Find A Therapist Today and Win Within!</h2>
+    <!-- <h3>FIGHT AND WIN YOUR MENTAL HEALTH BATTLES</h3> -->
+
+    <div class="container">
+        <ul>
+            <li><a href="https://www.psychologytoday.com/us">Home</a></li>
+            <li><a href="https://www.psychologytoday.com/us">About</a></li>
+            <li><a href="https://news.google.com/">News</a></li>
+        </ul>
+
+
+    </div>
+
+    <a href="/doctors/new">
+
+
+</header>
 
 <body>
-    <div class="top-div">
-        <h1>GOLD Mind!</h1>
-        <h4>You're not Alone!</h4>
-        <h4>Speak to a therapist</h4>
-        <div class="row"></div>
-        <div class='col s12 m7'>
+    <div id="one">
+
+    </div>
+    <div class="row">
+        <div class="col s12 16">
             <div class="card">
-                <div class="card content">
-                    <div class="card-image">
-                        <% doctor.forEach((data, index) => { %>
-                        <h2><%=data.specialty%></h2>
-                        <h2><%=data.contact%></h2>
-                        <img src="<%=data.img %>" alt="<%=data.name %>">
-                        <br>
-                        <a href="/doctors/<%= index %>">More Info</a>
-                        <nav>
-                            <a href="/products/new">Create a New Product</a>
-                        </nav>
-
-
-
-
-                        <a href="/doctors/new">Add New Doctor</a>
-                        </nav>
-                    </div>
-
-
-                    <% doctor.forEach((data, index) => { %>
-                    <h2><%=data.name%></h2>
-                    <%})%>
+                <div class="card-content">
                 </div>
+                <% doctor.forEach((data,id) => { %>
+                <div class="card-image">
+                    <!-- <a href="#" class="halfway-fab btn-floating pink pulse">
+                        <i class="material-icons">favorite</i>
+                   </a> -->
+
+
+                    <img src=<%=data.img%> 
+                    <h3><%=data.name%></h3>
+                    <h4><%=data.specialty%></h4>
+                    <h2><%=data.contact%></h2>
+                    <div class="card-action">
+                        <p>"Sometimes the worst place you</p>
+                        <p>can be at is in your own head"</p>
+                    </div>
+                </div>
+                <!-- <div class="two">
+
+        </div>
+        <div class="col s12 16">     
+           <div class="card">
+             <div class="card-content">
+                </div>
+                   <div class="card-content">
+                      </div> -->
+
+                <li>
+                    The <a href="/doctor/<%=doctor.id; %>"><%=doctor.name; %></a> is <%=doctor.specialty; %>.
+                    <% if(doctor[id].addNewDoctor === true){ %>
+                    It is add new doctor
+                    <% } else { %>
+                    It is not add new doctor
+                    <% } %>
+
+                <form>
+                 <input type="submit" value="DELETE" />
+                 <form action="/doctor/<%=doctor.id; %>?_method=DELETE" method="POST">
+                 <a href="/doctor/<%=doctor.id; %>/edit">Edit</a>
+                 </form>
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <%})%>
+
 </body>
 
 </html>

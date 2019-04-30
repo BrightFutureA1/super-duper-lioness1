@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-      <h1>Edit Product</h1>
-      <form action=“/doctors/<%=doctor.id%>?_method=PUT” method=“POST”>
-        <label for="name">Name</label>
-        <input type="text" name="name" value="<%=doctor.name%>"/>
-        <label for="specialty">Specialty</label>
-        <textarea name="specialty" id="specialty" value="<%=doctor.specialty%>">Specialty</textarea>
-        <label for="contact">Contact</label>
-        <input type="text" name="contact" value="<%=doctor.contact%>" />
-        <label for="img">Image URL</label>
-        <input type="text" name="img" value="<%=doctor.img%>" />
-        <input type="submit" name="" value="Submit Changes"/>
-      </form>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <form action="/doctor/<%=doctor.id%>?_method=PUT" method="POST">
+        <!--  NOTE: the form is pre-populated with values for the server-->
+        Name: <input type="text" name="name" value="<%=doctor.name%>" /><br />
+        Specialty: <input type="text" name="specialty" value="<%=doctor.specialty%>" /><br />
+        Contact: <input type="text" name="contact" value="<%=doctor.contact%>" /><br />
+        Img: <input type="text" name="img" value="<%=doctor.img%>" /><br />
+        Is Add New Doctor:
+        <input type="checkbox" name="addNewDoctor" <% if(doctor.addNewDoctor === true){ %> checked <% } %> />
+        <br />
+        <input type="submit" name="" value="Submit Changes" />
+    </form>
+</body>
+
 </html>
