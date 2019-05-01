@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <form action="/doctor/<%=doctor.id%>?_method=PUT" method="POST">
+    <form action="/doctors/<%=doctor.id%>?_method=PUT" method="POST">
         <!--  NOTE: the form is pre-populated with values for the server-->
         Name: <input type="text" name="name" value="<%=doctor.name%>" /><br />
         Specialty: <input type="text" name="specialty" value="<%=doctor.specialty%>" /><br />
